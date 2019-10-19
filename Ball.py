@@ -8,7 +8,17 @@ class Pos:
     
     def __sub__(self, another_pos):
         return Pos(self.x - another_pos.x, self.y - another_pos.y)
+    
+    def __mul__(self, scale):
+        return Pos(self.x * scale, self.y * scale)
 
+    def __rmul__(self, scale):
+        return self * scale
+    def __neg__(self):
+        return -1 * self
+
+    def __eq__(self, another_pos):
+        return self.x == another_pos.x and self.y == another_pos.y
     def __str__(self):
         return "({}, {})".format(self.x, self.y)
     
@@ -16,7 +26,7 @@ def dot(pos1, pos2):
     return pos1.x * pos2.x + pos1.y * pos2.y
     
 class Ball:
-    def __init__(self, mass = 1, ):
+    def __init__(self, mass = 1, pos = Pos()):
         self.mass = mass
 
 
