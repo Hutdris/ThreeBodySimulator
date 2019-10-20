@@ -1,8 +1,7 @@
 import unittest
 from Ball import Pos
 
-class TestPosMethods(unittest.TestCase):
-
+class TestPosClass(unittest.TestCase):
     def test_eq(self):
         # TODO: setUp tearDown?
         original_point = Pos()
@@ -28,6 +27,11 @@ class TestPosMethods(unittest.TestCase):
         self.assertEqual(3 * unit_point,  tt_point)
         self.assertEqual(-3 * unit_point,  -tt_point)
 
+
+class TestBallClass(unittest.TestCase):
+    pass
+class TestSpaceClass(unittest.TestCase):
+    pass
 
 if __name__ == '__main__':
     unittest.main()
